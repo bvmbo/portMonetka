@@ -3,7 +3,7 @@ session_start();
 if (!isset($_SESSION['zalogowany'])) { 
     $_SESSION['count'] = False; 
 }
-require("connect.php");
+require("./connect.php");
 
 $email = $_POST['email_logowanie'];
 $haslo = $_POST['haslo_logowanie'];
@@ -41,10 +41,10 @@ $conn->close();
 <?php 
 
 if (isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']===True){
-    require("panel.html");
+    require("../panel.html");
 }
 else{
-    require("logowanie_zle.html");
+    require("../logowanie_zle.html");
 }
 
 

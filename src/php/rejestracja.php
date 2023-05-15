@@ -2,7 +2,7 @@
 echo "dsada";
 session_start();
 
-require("connect.php");
+require("./connect.php");
 
 $login = $_POST['login_rejestracja'];
 $haslo = $_POST['haslo_rejestracja'];
@@ -15,5 +15,5 @@ $result= $conn->query($sql);
 
 
 $conn->close();
-require("po_rejestracji.html");
+require("../po_rejestracji.html");
 ?>
