@@ -23,4 +23,23 @@
   to {
     transform: rotate(-360deg);
   }
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.6rem;
+  color: #fff;
+  background-color: #232323;
 }/*# sourceMappingURL=logowanie_zle.css.map */
