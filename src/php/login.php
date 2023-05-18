@@ -22,30 +22,12 @@ while ($www = $result_haslo->fetch_assoc()) {
     $wlasciwe_haslo=$www['PASSWORD'];
 }
 
-
-
 if(isset($wlasciwy_mail) && $wlasciwy_mail==$email && isset($wlasciwe_haslo) && $wlasciwe_haslo==$haslo){
-
-    $_SESSION['zalogowany'] = TRUE;   
-
+    $_SESSION['zalogowany'] = TRUE;
 }
 else{
-    $_SESSION['zalogowany']=FALSE ;  
-    
+    $_SESSION['zalogowany']=FALSE ;   
 }
-
-
 
 $conn->close();
-?>
-<?php 
-
-if (isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']===True){
-    require("../panel.html");
-}
-else{
-    require("../logowanie_zle.html");
-}
-
-
 ?>
