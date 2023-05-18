@@ -26,7 +26,7 @@
 		<img class="shapes__icon-one" src="../img/icons/square.svg" alt="" />
 		<img class="shapes__icon-two" src="../img/icons/x.svg" alt="" />
 		<div class="wrapper">
-			<form method="POST" action="php/login.php">
+			<form>
 				<h1>Sign in to PortMonetka</h1>
 				<div class="form-box">
 					<label for="email">E-mail address</label>
@@ -36,7 +36,6 @@
 						placeholder="E-mail address"
 						name="email_logowanie"
 					/>
-					<p class="error-text">error</p>
 				</div>
 				<div class="form-box">
 					<label for="password">Password</label>
@@ -50,10 +49,9 @@
 				</div>
 				<div class="control-buttons">
 					<input type="submit" class="send" value="Send" />
-					<button class="clear" type="button">Clear</button>
 				</div>
 			</form>
 		</div>
-		<!-- <script src="../js/signin.js"></script> -->
+		<script src="../js/signin.js"></script>
 	</body>
 </html>
