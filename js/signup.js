@@ -53,22 +53,43 @@ const checkMail = (input) => {
 };
 
 const ajaxCall = () => {
-	const allInputs = document.querySelectorAll(".error");
-	if (allInputs.length === 0) {
-		let data = new FormData();
-		data.append("login_rejestracja", username.value);
-		data.append("haslo_rejestracja", password.value);
-		data.append("email_rejestracja", email.value);
+	let dataForm = new FormData();
+	dataForm.append("login_rejestracja", username.value);
+	dataForm.append("haslo_rejestracja", password.value);
+	dataForm.append("email_rejestracja", email.value);
 
-		let xhr = new XMLHttpRequest();
-		xhr.open("POST", "rejestracja.php");
-		xhr.onload = function () {
-			window.location.href = "../src/po_rejestracji.html";
-		};
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", "../src/php/rejestracja.php");
+	xhr.send(dataForm);
+	xhr.onload = function () {
+		fetch("../src/php/iloscBledow.php")
+			.then((response) => {
+				if (!response.ok) {
+					throw new Error("Something went wrong!");
+				}
+				return response.json();
+			})
+			.then((data) => {
+				if (data == 0) {
+					showError(username, "Podana nazwa użytkownika jest zajęta");
+				} else if (data == 2) {
+					if (email.value != "") {
+						showError(email, "Podany email jest zajęty.");
+					}
+				} else {
+					if (username.value != "" && email.value != "") {
+						clearError(username);
+						clearError(email);
+					}
+					window.location.href = "../src/po_rejestracji.html";
+				}
+			})
+			.catch((error) => {
+				console.log(error);
+			});
 
-		xhr.send(data);
 		return false;
-	}
+	};
 };
 
 sendBtn.addEventListener("click", (e) => {
