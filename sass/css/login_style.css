@@ -118,6 +118,7 @@ body {
 }
 .wrapper form .form-box .error-text {
   visibility: hidden;
+  text-align: center;
   margin: 5px 0 0 10px;
   font-weight: 600;
   color: #ff0033;
@@ -175,7 +176,7 @@ body {
   color: rgba(214, 199, 142, 0.4);
 }
 
-@media (max-width: 576px) {
+@media (max-width: 390px) {
   .fa-x {
     display: none;
   }
