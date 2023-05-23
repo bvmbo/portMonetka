@@ -174,10 +174,4 @@ body {
 
 .fa-x:hover {
   color: rgba(214, 199, 142, 0.4);
-}
-
-@media (max-width: 390px) {
-  .fa-x {
-    display: none;
-  }
 }/*# sourceMappingURL=login_style.css.map */
