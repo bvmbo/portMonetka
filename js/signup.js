@@ -47,49 +47,62 @@ const checkMail = (input) => {
 
 	if (!re.test(input.value)) {
 		showError(input, "Nieprawidłowy email.");
+		return false;
 	} else {
 		clearError(input);
+		return true;
 	}
 };
 
 const ajaxCall = () => {
-	let dataForm = new FormData();
-	dataForm.append("login_rejestracja", username.value);
-	dataForm.append("haslo_rejestracja", password.value);
-	dataForm.append("email_rejestracja", email.value);
+	if (
+		email.value != "" &&
+		password.value != "" &&
+		password.value != "" &&
+		password2.value != "" &&
+		username.value != ""
+	) {
+		let dataForm = new FormData();
+		dataForm.append("login_rejestracja", username.value);
+		dataForm.append("haslo_rejestracja", password.value);
+		dataForm.append("email_rejestracja", email.value);
 
-	let xhr = new XMLHttpRequest();
-	xhr.open("POST", "../src/php/rejestracja.php");
-	xhr.send(dataForm);
-	xhr.onload = function () {
-		fetch("../src/php/iloscBledow.php")
-			.then((response) => {
-				if (!response.ok) {
-					throw new Error("Something went wrong!");
-				}
-				return response.json();
-			})
-			.then((data) => {
-				if (data == 0) {
-					showError(username, "Podana nazwa użytkownika jest zajęta");
-				} else if (data == 2) {
-					if (email.value != "") {
-						showError(email, "Podany email jest zajęty.");
+		let xhr = new XMLHttpRequest();
+		xhr.open("POST", "../php/rejestracja.php");
+		xhr.send(dataForm);
+		xhr.onload = function () {
+			fetch("../php/iloscBledow.php")
+				.then((response) => {
+					if (!response.ok) {
+						throw new Error("Something went wrong!");
 					}
-				} else {
-					if (username.value != "" && email.value != "") {
-						clearError(username);
-						clearError(email);
+					return response.json();
+				})
+				.then((data) => {
+					console.log(data);
+					if (data == 0) {
+						showError(username, "Podana nazwa użytkownika jest zajęta");
+					} else if (data == 2) {
+						console.log("kupka");
+						if (email.value != "" && checkMail(email)) {
+							console.log("kupka2");
+							showError(email, "Podany email jest zajęty.");
+						}
+					} else {
+						if (username.value != "" && email.value != "") {
+							clearError(username);
+							clearError(email);
+						}
+						window.location.href = "../html/po_rejestracji.html";
 					}
-					window.location.href = "../src/po_rejestracji.html";
-				}
-			})
-			.catch((error) => {
-				console.log(error);
-			});
+				})
+				.catch((error) => {
+					console.log(error);
+				});
 
-		return false;
-	};
+			return false;
+		};
+	}
 };
 
 sendBtn.addEventListener("click", (e) => {
