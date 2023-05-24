@@ -425,6 +425,7 @@ h1.company-name {
 
 	.plans__modal.modal-active {
 		display: block;
+		animation: show-modal 0.5s;
 	}
 }
 
