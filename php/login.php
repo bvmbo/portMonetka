@@ -42,6 +42,7 @@ while ($i = $result_login->fetch_assoc()) {
 if((isset($wlasciwy_mail) && $wlasciwy_mail == $email) && (isset($wlasciwe_haslo) && $wlasciwe_haslo==$haslo)){
     $_SESSION['czyZalogowany'] = TRUE;
     $_SESSION['zalogowany_user'] = $wlasciwy_login;
+    $_SESSION['email_user'] = $wlasciwy_mail;
     $_SESSION['id_user']= $wlasciwe_id;
     $_SESSION['haslo_user']=$wlasciwe_haslo;
 }
