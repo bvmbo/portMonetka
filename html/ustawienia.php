@@ -109,11 +109,13 @@ if (isset($_SESSION['czyZalogowany'])&& $_SESSION['czyZalogowany']==True)
 								class="user__settings-form-input"
 								type="password"
 								id="oldPassword"
+								name="oldPassword"
 							/>
 							<input
 								class="user__settings-form-input"
 								type="password"
 								id="newPassword"
+								name="newPassword"
 							/>
 						</div>
 					</div>
