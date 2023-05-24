@@ -54,7 +54,7 @@ if (isset($_SESSION['czyZalogowany'])&& $_SESSION['czyZalogowany']==True)
 					<span class="tooltip">Analityka</span>
 				</li>
 				<li>
-					<a href="ustawienia.php">
+					<a href="ustawienia.html">
 						<i class="bx bx-cog"></i>
 						<span class="sidebar__item-name">Ustawienia</span>
 					</a>
@@ -79,19 +79,46 @@ if (isset($_SESSION['czyZalogowany'])&& $_SESSION['czyZalogowany']==True)
 			</ul>
 		</nav>
 		<main class="main">
-			<div class="wrapper">
-				<div class="user__settings-header">
-					<h1 class="user__settings-h">PieskLeszek</h1>
+			<div class="user__settings">
+				<h1 class="user__settings-title">Twoje dane</h1>
+				<div class="user__settings-info-box">
+					<div class="user__settings-info-box-name">
+						<p class="user__settings-info-box-p">Login</p>
+						<p class="user__settings-info-box-p">Hasło</p>
+						<p class="user__settings-info-box-p">E-mail</p>
+					</div>
+					<div class="user__settings-info-box-bio">
+						<p class="user__settings-info-box-p underline">userek</p>
+						<p class="user__settings-info-box-p underline">haselko</p>
+						<p class="user__settings-info-box-p underline">adminek@wp.pl</p>
+					</div>
 				</div>
+				<h1 class="user__settings-title">Zmień hasło</h1>
 				<form class="user__settings-form">
-					<label for="login">Nowa nazwa użytkownia</label>
-					<input type="text" id="login" />
-					<label for="password">Nowe hasło</label>
-					<input type="text" id="password" />
-					<label for="rePassword">Powtórz hasło</label>
-					<input type="text" id="rePassword" />
+					<div class="user__settings-form-container">
+						<div class="user__settings-form-labels">
+							<label class="user__settings-form-item" for="newPassword">
+								Nowe hasło
+							</label>
+							<label class="user__settings-form-item" for="oldPassword">
+								Stare hasło
+							</label>
+						</div>
+						<div class="user__settings-form-inputs">
+							<input
+								class="user__settings-form-input"
+								type="password"
+								id="oldPassword"
+							/>
+							<input
+								class="user__settings-form-input"
+								type="password"
+								id="newPassword"
+							/>
+						</div>
+					</div>
 
-					<button>Wyślij</button>
+					<button class="send">Wyślij</button>
 				</form>
 			</div>
 		</main>
