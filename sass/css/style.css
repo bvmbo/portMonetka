@@ -24,6 +24,14 @@
     transform: rotate(-360deg);
   }
 }
+@keyframes show-modal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 *,
 *::before,
 *::after {
@@ -389,6 +397,7 @@ h1.company-name {
 }
 .plans .plans__modal.modal-active {
   display: block;
+  animation: show-modal 0.5s;
 }
 
 .newsletter {
