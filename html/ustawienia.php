@@ -88,7 +88,11 @@ if (isset($_SESSION['czyZalogowany'])&& $_SESSION['czyZalogowany']==True)
 						<p class="user__settings-info-box-p">E-mail</p>
 					</div>
 					<div class="user__settings-info-box-bio">
-						<p class="user__settings-info-box-p underline">userek</p>
+						<p class="user__settings-info-box-p underline">
+							<?php
+								echo $_SESSION['zalogowany_user'];
+							?>
+						</p>
 						<p class="user__settings-info-box-p underline">haselko</p>
 						<p class="user__settings-info-box-p underline">adminek@wp.pl</p>
 					</div>
