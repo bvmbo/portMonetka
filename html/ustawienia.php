@@ -94,7 +94,11 @@ if (isset($_SESSION['czyZalogowany'])&& $_SESSION['czyZalogowany']==True)
 							?>
 						</p>
 						<p class="user__settings-info-box-p underline">haselko</p>
-						<p class="user__settings-info-box-p underline">adminek@wp.pl</p>
+						<p class="user__settings-info-box-p underline">
+							<?php
+								echo $_SESSION['email_user'];
+							?>
+						</p>
 					</div>
 				</div>
 				<h1 class="user__settings-title">Zmień hasło</h1>
