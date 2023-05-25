@@ -93,7 +93,7 @@ if (isset($_SESSION['czyZalogowany'])&& $_SESSION['czyZalogowany']==True)
 								echo $_SESSION['zalogowany_user'];
 							?>
 						</p>
-						<p class="user__settings-info-box-p underline">haselko</p>
+						<p class="user__settings-info-box-p underline">********</p>
 						<p class="user__settings-info-box-p underline">
 							<?php
 								echo $_SESSION['email_user'];
@@ -102,25 +102,25 @@ if (isset($_SESSION['czyZalogowany'])&& $_SESSION['czyZalogowany']==True)
 					</div>
 				</div>
 				<h1 class="user__settings-title">Zmień hasło</h1>
-				<form class="user__settings-form">
+				<form class="user__settings-form" method="POST">
 					<div class="user__settings-form-container">
 						<div class="user__settings-form-labels">
-							<label class="user__settings-form-item" for="newPassword">
-								Nowe hasło
-							</label>
 							<label class="user__settings-form-item" for="oldPassword">
 								Stare hasło
+							</label>
+							<label class="user__settings-form-item" for="newPassword">
+								Nowe hasło
 							</label>
 						</div>
 						<div class="user__settings-form-inputs">
 							<input
-								class="user__settings-form-input"
+								class="user__settings-form-input old-password"
 								type="password"
 								id="oldPassword"
 								name="oldPassword"
 							/>
 							<input
-								class="user__settings-form-input"
+								class="user__settings-form-input new-password"
 								type="password"
 								id="newPassword"
 								name="newPassword"
@@ -130,9 +130,11 @@ if (isset($_SESSION['czyZalogowany'])&& $_SESSION['czyZalogowany']==True)
 
 					<button class="send">Wyślij</button>
 				</form>
+				<p class="message"></p>
 			</div>
 		</main>
 		<script src="../js/panel.js"></script>
+		<script src="../js/settings.js"></script>
 	</body>
 </html>
 <?php
