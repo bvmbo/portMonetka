@@ -17,6 +17,7 @@ body {
   font-size: 1.6rem;
   color: #fff;
   background-color: #232323;
+  overflow-x: hidden;
 }
 
 .sidebar {
@@ -227,6 +228,187 @@ body {
   font-size: 25px;
   font-weight: 500;
   margin: 18px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 78px;
+}
+main .options {
+  padding-top: 20px;
+  width: 500px;
+  border-bottom: 1px solid #191919;
+}
+
+h2.title {
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 200;
+}
+
+.available-money {
+  margin-top: -10px;
+  text-align: center;
+  font-size: 40px;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+  margin: 25px 0;
+}
+
+.controls button {
+  padding: 1em;
+  margin-top: 1em;
+  border: 1px solid #d6c78e;
+  border-radius: 5px;
+  background: none;
+  color: #d6c78e;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.controls button:hover {
+  outline: none;
+  color: #232323;
+  background-color: #d6c78e;
+}
+
+.controls i {
+  margin-right: 10px;
+}
+
+.add-transaction-panel {
+  display: none;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #191919;
+  color: #fff;
+  z-index: 100;
+}
+.add-transaction-panel__title {
+  font-size: 32px;
+  padding-top: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 200;
+}
+
+.add-transaction-panel label {
+  margin-top: 40px;
+  margin-bottom: 5px;
+  font-size: 26px;
+}
+
+.add-transaction-panel small {
+  margin-bottom: 15px;
+  font-style: italic;
+  padding: 0 20px;
+  color: #ddd;
+}
+
+.add-transaction-panel input,
+.add-transaction-panel select {
+  width: 80%;
+}
+
+.add-transaction-panel input,
+.add-transaction-panel select,
+.add-transaction-panel button {
+  padding: 10px 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.add-transaction-panel input,
+.add-transaction-panel select,
+.add-transaction-panel option {
+  font-size: 18px;
+}
+
+.add-transaction-panel input,
+.add-transaction-panel select {
+  color: #fff;
+}
+
+.add-transaction-panel option {
+  color: black;
+}
+
+.add-transaction-panel input,
+.add-transaction-panel select,
+.add-transaction-panel option {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.add-transaction-panel input:focus,
+.add-transaction-panel select:focus,
+.add-transaction-panel option:focus {
+  outline: none;
+  border: 1px solid #d6c78e;
+}
+
+.add-transaction-panel .panel-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.add-transaction-panel button {
+  margin: 0 10px;
+  padding: 15px 30px;
+  font-size: 14px;
+  border: 1px solid #d6c78e;
+  background: none;
+  color: #d6c78e;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.add-transaction-panel button:hover {
+  background-color: rgb(25, 27, 51);
+}
+.add-transaction-panel button:hover:hover {
+  outline: none;
+  color: #232323;
+  background-color: #d6c78e;
+}
+
+.history {
+  margin-left: 78px;
+  padding-top: 20px;
+}
+.history__title {
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 200;
+}
+.history__table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 90%;
+}
+.history__table th {
+  font-weight: 500;
+}
+.history__table th,
+.history__table td {
+  padding: 0.25rem;
+  text-align: left;
+  border: 1px solid #d6c78e;
+}
+.history__table tbody tr:nth-child(odd) {
+  background: #191919;
 }
 
 @media (max-width: 420px) {
