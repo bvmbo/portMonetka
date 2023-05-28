@@ -133,7 +133,8 @@ if (isset($_SESSION['czyZalogowany'])&& $_SESSION['czyZalogowany']==True)
 				<p class="message"></p>
 			</div>
 		</main>
-		<script src="../js/panel.js"></script>
+
+		<script src="../js/sidebar.js"></script>
 		<script src="../js/settings.js"></script>
 	</body>
 </html>
