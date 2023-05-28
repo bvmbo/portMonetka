@@ -34,7 +34,7 @@ while ($www = $result_haslo->fetch_assoc()) {
 while ($l = $result_login->fetch_assoc()) {
     $wlasciwy_login=$l['LOGIN'];
 }
-while ($i = $result_login->fetch_assoc()) {
+while ($i = $result_id->fetch_assoc()) {
     $wlasciwe_id=$i['ID'];
 }
 
